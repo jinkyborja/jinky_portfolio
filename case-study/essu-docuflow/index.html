@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESSU GradDocuFlow Case Study — Jinky Suson</title>
+<meta name="description" content="A case study of ESSU GradDocuFlow, a graduate student document request portal.">
+<meta property="og:title" content="ESSU GradDocuFlow Case Study — Jinky Suson">
+<meta property="og:description" content="Designing a clear request and tracking experience for graduate students.">
+<meta property="og:image" content="https://jinkysuson.vercel.app/images/essudocuflow-home.webp">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar__label" href="../../index.html">Jinky Suson / Case Study</a>
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark mode">
+    <span class="theme-toggle__icon">☾</span>
+    <span class="theme-toggle__text">Dark Mode</span>
+  </button>
+</header>
+<main class="page case-study">
+  <a class="project__link case-study__back" href="../../index.html#projects">&larr; All projects</a>
+  <section class="card">
+    <p class="skills__group-title">CASE STUDY / UI-UX DESIGN</p>
+    <h1 class="profile__name">ESSU GradDocuFlow</h1>
+    <p class="case-study__intro">A graduate student document request portal designed to make requesting and tracking university documents clearer.</p>
+    <img class="case-study__image" src="../../images/essudocuflow-home.webp" alt="ESSU GradDocuFlow sign-in page for graduate students" width="1916" height="918" fetchpriority="high">
+  </section>
+  <section class="card case-study__section" id="problem">
+    <h2>Problem</h2>
+    <p>Graduate students need to request official documents from the Graduate School, but the process can feel unclear when request requirements, progress, and next steps are spread across separate interactions. The portal brings the request journey and its status into one place.</p>
+  </section>
+  <section class="card case-study__section" id="users">
+    <h2>Users</h2>
+    <p>The primary users are Eastern Samar State University Graduate School students who need documents, plus school staff who receive and process those requests.</p>
+  </section>
+  <section class="card case-study__section" id="research">
+    <h2>Research</h2>
+    <p>I focused the design on the needs visible in the request workflow: make document options understandable, collect the required details in context, and show students what happens after submission. This section can be expanded with interview notes, survey findings, and validation results.</p>
+  </section>
+  <section class="card case-study__section" id="user-flow">
+    <h2>User Flow</h2>
+    <ol class="case-study__flow">
+      <li>Create an account or sign in</li>
+      <li>Choose a document</li>
+      <li>Enter request details</li>
+      <li>Review and submit</li>
+      <li>Track progress and receive updates</li>
+    </ol>
+  </section>
+  <section class="card case-study__section" id="wireframes">
+    <h2>Wireframes</h2>
+    <p>The page structure groups account access, document selection, request details, review, and tracking into distinct steps.</p>
+    <div class="wireframes-grid">
+      <figure class="wireframe">
+        <button type="button" class="wireframe__image-button" data-lightbox data-src="../../images/student dashboard.png" data-alt="Low-fidelity wireframe of the student dashboard with summary cards, a recent requests table, and announcements" aria-label="Enlarge Student Dashboard wireframe">
+          <img src="../../images/student dashboard.png" alt="Low-fidelity wireframe of the student dashboard with summary cards, a recent requests table, and announcements" width="1404" height="878" loading="lazy">
+        </button>
+        <figcaption>
+          <h3>Student Dashboard</h3>
+          <p>Gives students an at-a-glance view: summary counts at the top, a recent requests table with status labels, and announcements on the side.</p>
+        </figcaption>
+      </figure>
+      <figure class="wireframe">
+        <button type="button" class="wireframe__image-button" data-lightbox data-src="../../images/new request.png" data-alt="Low-fidelity wireframe of the new request review and submit screen with a progress indicator, request details table, fee note, and certification checkbox" aria-label="Enlarge New Request: Review &amp; Submit wireframe">
+          <img src="../../images/new request.png" alt="Low-fidelity wireframe of the new request review and submit screen with a progress indicator, request details table, fee note, and certification checkbox" width="1407" height="879" loading="lazy">
+        </button>
+        <figcaption>
+          <h3>New Request: Review &amp; Submit</h3>
+          <p>The last step before submitting. A step indicator shows progress, request details are in one scannable table, and the fee note and certification checkbox come right before the Submit button.</p>
+        </figcaption>
+      </figure>
+      <figure class="wireframe">
+        <button type="button" class="wireframe__image-button" data-lightbox data-src="../../images/track request.png" data-alt="Low-fidelity wireframe of request tracking with a tracking number field, vertical status timeline, and details card" aria-label="Enlarge Request Tracking wireframe">
+          <img src="../../images/track request.png" alt="Low-fidelity wireframe of request tracking with a tracking number field, vertical status timeline, and details card" width="1313" height="879" loading="lazy">
+        </button>
+        <figcaption>
+          <h3>Request Tracking</h3>
+          <p>Students enter a tracking number and see a vertical timeline of completed, in-progress, and pending steps, with a details card beside it.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="card case-study__section" id="final-ui">
+    <h2>Final UI</h2>
+    <p>The final interface pairs a student-facing request journey with status tracking and administrative screens.</p>
+    <img class="case-study__image" src="../../images/5.webp" alt="GradDocuFlow document request selection screen" width="1440" height="897" loading="lazy">
+    <img class="case-study__image" src="../../images/10.webp" alt="GradDocuFlow request tracking timeline" width="1313" height="881" loading="lazy">
+    <img class="case-study__image" src="../../images/13.webp" alt="GradDocuFlow administrator overview dashboard" width="1100" height="878" loading="lazy">
+  </section>
+  <section class="card case-study__section" id="what-i-learned">
+    <h2>What I Learned</h2>
+    <p>Request workflows benefit from clear progress feedback, contextual requirements, and a visible confirmation after submission. Add reflections from usability testing and implementation here.</p>
+  </section>
+</main>
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__backdrop" data-close="true"></div>
+  <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button type="button" class="lightbox__close" aria-label="Close preview">✕</button>
+    <img class="lightbox__image" alt="">
+  </div>
+</div>
+<script src="../../script.js"></script>
+</body>
+</html>

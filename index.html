@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jinky Suson — UI/UX Designer &amp; Frontend Developer</title>
+<meta name="description" content="Jinky Suson is a UI/UX Designer and Frontend Developer creating clean, accessible, responsive digital experiences.">
+<meta property="og:title" content="Jinky Suson — UI/UX Designer &amp; Frontend Developer">
+<meta property="og:description" content="I design clear, accessible interfaces and build them with React.">
+<meta property="og:image" content="https://jinkysuson.vercel.app/images/jin.webp">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinkysuson.vercel.app/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" aria-label="Jinky Suson home">
+        <span class="brand__mark">JS</span>
+        <span class="brand__name">Jinky Suson</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark mode">
+          <span class="theme-toggle__icon">☾</span>
+          <span class="theme-toggle__text">Dark Mode</span>
+        </button>
+        <a href="assets/Jinky-Suson-CV.pdf" class="btn btn--primary" download="Jinky-Suson-CV.pdf">Download CV</a>
+      </div>
+    </div>
+  </header>
+
+<main id="top">
+    <section class="hero container" id="portfolio">
+      <div class="hero__media">
+        <div class="hero__portrait">
+          <img src="images/jin.webp" alt="Portrait of Jinky Suson" width="1254" height="1254" fetchpriority="high">
+        </div>
+      </div>
+
+      <div class="hero__content">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>Jinky Suson</h1>
+        <p class="hero__role">UI/UX Designer &amp; Frontend Developer</p>
+        <p class="hero__intro">I design clear, accessible interfaces and build them with thoughtful front-end code.</p>
+
+        <div class="meta-list" aria-label="Profile details">
+          <p>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+            Philippines
+          </p>
+          <p>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 2 7l10 4 10-4-10-4zm-8 6v4.6c0 2.95 3.8 5.4 8 5.4s8-2.45 8-5.4V9l-8 3.2L4 9z"/></svg>
+            BSIT, Eastern Samar State University
+          </p>
+        </div>
+
+        <div class="hero__actions">
+          <a href="assets/Jinky-Suson-CV.pdf" class="btn btn--primary" download="Jinky-Suson-CV.pdf">Download CV</a>
+          <a href="mailto:jinkysuson09@gmail.com" class="btn btn--secondary">Send Email</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Selected work and product design case studies.</h2>
+        </div>
+
+        <div class="projects-list">
+          <article class="project-card">
+            <img src="images/library.webp" alt="RFID Library System admin login screen" width="1735" height="903" loading="lazy">
+            <div class="project-card__content">
+              <h3>RFID Library System</h3>
+              <p><strong>Role:</strong> UI/UX Design, Frontend Development</p>
+              <p><strong>Tools:</strong> Figma, HTML, CSS, JavaScript</p>
+              <p>Library staff need a consistent way to record visits and manage attendance. I built an RFID-powered library system with an admin workflow for managing daily operations.</p>
+              <a href="https://rfid-library-r38h.onrender.com" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="images/eindex-home.webp" alt="E-Index System teacher login screen" width="1461" height="874" loading="lazy">
+            <div class="project-card__content">
+              <h3>E-Index System</h3>
+              <p><strong>Role:</strong> UI/UX Design, Frontend Development</p>
+              <p><strong>Tools:</strong> Figma, HTML, CSS, JavaScript</p>
+              <p>Teachers need a clear way to access and manage student records. I built a student e-index portal with teacher sign-in and account access.</p>
+              <a href="https://e-index-ir8v.onrender.com" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="images/essudocuflow-home.webp" alt="ESSU GradDocuFlow student document request portal sign-in screen" width="1916" height="918" loading="lazy">
+            <div class="project-card__content">
+              <h3>ESSU GradDocuFlow</h3>
+              <p><strong>Role:</strong> UI/UX Design, Frontend Development</p>
+              <p><strong>Tools:</strong> Figma, HTML, CSS, JavaScript</p>
+              <p>Graduate students need a clear way to request documents from the Graduate School. I designed and built a dedicated portal for student document requests.</p>
+              <div class="project-card__actions">
+                <a href="https://essu-docuflow.vercel.app/login" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+                <a class="btn btn--primary btn--small" href="case-study/essu-docuflow/index.html">View case study</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="images/sapao-home.webp" alt="Sapao Coast community tourism website homepage" width="1095" height="850" loading="lazy">
+            <div class="project-card__content">
+              <h3>Sapao Coast Extensions</h3>
+              <p><strong>Role:</strong> UI/UX Design, Frontend Development</p>
+              <p><strong>Tools:</strong> Figma, HTML, CSS, JavaScript</p>
+              <p>Community extension programs and local impact need to be easy for visitors to discover. I built a website that brings program information and community stories together.</p>
+              <a href="https://sapao-coast.vercel.app/" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  <!-- UI Designs -->
+  <section class="card ui-designs" id="ui-designs">
+    <h2 class="card__title">Selected UI Designs</h2>
+    <hr class="divider">
+    <div class="ui-marquees">
+      <div class="ui-marquee" aria-label="UI designs, images 1 through 11">
+        <div class="ui-marquee__track">
+          <div class="ui-marquee__group">
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/1.webp" data-alt="DocuFlow landing page and student sign-in screen" aria-label="Enlarge DocuFlow landing page and sign-in screen"><img src="images/1.webp" alt="DocuFlow landing page and student sign-in screen" width="1439" height="899" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/2.webp" data-alt="DocuFlow student account creation form" aria-label="Enlarge DocuFlow account creation form"><img src="images/2.webp" alt="DocuFlow student account creation form" width="1439" height="900" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/3.webp" data-alt="DocuFlow email verification screen" aria-label="Enlarge DocuFlow email verification screen"><img src="images/3.webp" alt="DocuFlow email verification screen" width="1439" height="820" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/4.webp" data-alt="DocuFlow student dashboard with request summaries" aria-label="Enlarge DocuFlow student dashboard"><img src="images/4.webp" alt="DocuFlow student dashboard with request summaries" width="1440" height="904" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/5.webp" data-alt="DocuFlow new document request page" aria-label="Enlarge DocuFlow new document request page"><img src="images/5.webp" alt="DocuFlow new document request page" width="1440" height="897" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/6.webp" data-alt="DocuFlow document request details form" aria-label="Enlarge DocuFlow request details form"><img src="images/6.webp" alt="DocuFlow document request details form" width="1197" height="878" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/7.webp" data-alt="DocuFlow request review and payment details" aria-label="Enlarge DocuFlow request review screen"><img src="images/7.webp" alt="DocuFlow request review and payment details" width="1409" height="878" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/8.webp" data-alt="DocuFlow request submitted confirmation" aria-label="Enlarge DocuFlow request confirmation"><img src="images/8.webp" alt="DocuFlow request submitted confirmation" width="1403" height="878" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/9.webp" data-alt="DocuFlow cancel request confirmation dialog" aria-label="Enlarge DocuFlow cancel request dialog"><img src="images/9.webp" alt="DocuFlow cancel request confirmation dialog" width="1339" height="879" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/10.webp" data-alt="DocuFlow request status tracking timeline" aria-label="Enlarge DocuFlow request tracking page"><img src="images/10.webp" alt="DocuFlow request status tracking timeline" width="1313" height="881" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/11.webp" data-alt="DocuFlow student notifications page" aria-label="Enlarge DocuFlow notifications page"><img src="images/11.webp" alt="DocuFlow student notifications page" width="1408" height="880" loading="lazy"></button>
+          </div>
+          <div class="ui-marquee__group" aria-hidden="true">
+            <img src="images/1.webp" alt="" aria-hidden="true" width="1439" height="899" loading="lazy">
+            <img src="images/2.webp" alt="" aria-hidden="true" width="1439" height="900" loading="lazy">
+            <img src="images/3.webp" alt="" aria-hidden="true" width="1439" height="820" loading="lazy">
+            <img src="images/4.webp" alt="" aria-hidden="true" width="1440" height="904" loading="lazy">
+            <img src="images/5.webp" alt="" aria-hidden="true" width="1440" height="897" loading="lazy">
+            <img src="images/6.webp" alt="" aria-hidden="true" width="1197" height="878" loading="lazy">
+            <img src="images/7.webp" alt="" aria-hidden="true" width="1409" height="878" loading="lazy">
+            <img src="images/8.webp" alt="" aria-hidden="true" width="1403" height="878" loading="lazy">
+            <img src="images/9.webp" alt="" aria-hidden="true" width="1339" height="879" loading="lazy">
+            <img src="images/10.webp" alt="" aria-hidden="true" width="1313" height="881" loading="lazy">
+            <img src="images/11.webp" alt="" aria-hidden="true" width="1408" height="880" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="ui-marquee ui-marquee--reverse" aria-label="UI designs, images 12 through 22">
+        <div class="ui-marquee__track">
+          <div class="ui-marquee__group">
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/12.webp" data-alt="DocuFlow student profile and personal information" aria-label="Enlarge DocuFlow profile page"><img src="images/12.webp" alt="DocuFlow student profile and personal information" width="1408" height="878" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/13.webp" data-alt="DocuFlow administrator overview dashboard" aria-label="Enlarge DocuFlow administrator dashboard"><img src="images/13.webp" alt="DocuFlow administrator overview dashboard" width="1100" height="878" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/14.webp" data-alt="DocuFlow administrator request management dialog" aria-label="Enlarge DocuFlow administrator request dialog"><img src="images/14.webp" alt="DocuFlow administrator request management dialog" width="1408" height="879" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/15.webp" data-alt="DocuFlow student records table" aria-label="Enlarge DocuFlow student records page"><img src="images/15.webp" alt="DocuFlow student records table" width="1346" height="881" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/16.webp" data-alt="DocuFlow add document type form" aria-label="Enlarge DocuFlow document type form"><img src="images/16.webp" alt="DocuFlow add document type form" width="1407" height="879" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/17.webp" data-alt="DocuFlow administrator reports dashboard" aria-label="Enlarge DocuFlow reports dashboard"><img src="images/17.webp" alt="DocuFlow administrator reports dashboard" width="1100" height="879" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/18.webp" data-alt="DocuFlow announcements management page" aria-label="Enlarge DocuFlow announcements page"><img src="images/18.webp" alt="DocuFlow announcements management page" width="1353" height="876" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/19.webp" data-alt="DocuFlow administrator settings page" aria-label="Enlarge DocuFlow settings page"><img src="images/19.webp" alt="DocuFlow administrator settings page" width="1294" height="878" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/20.webp" data-alt="DocuFlow mobile student dashboard" aria-label="Enlarge DocuFlow mobile dashboard"><img src="images/20.webp" alt="DocuFlow mobile student dashboard" width="352" height="880" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/21.webp" data-alt="DocuFlow mobile requests list" aria-label="Enlarge DocuFlow mobile requests page"><img src="images/21.webp" alt="DocuFlow mobile requests list" width="310" height="879" loading="lazy"></button>
+            <button type="button" class="ui-marquee__image" data-lightbox data-src="images/22.webp" data-alt="DocuFlow mobile document request form" aria-label="Enlarge DocuFlow mobile request form"><img src="images/22.webp" alt="DocuFlow mobile document request form" width="338" height="878" loading="lazy"></button>
+          </div>
+          <div class="ui-marquee__group" aria-hidden="true">
+            <img src="images/12.webp" alt="" aria-hidden="true" width="1408" height="878" loading="lazy">
+            <img src="images/13.webp" alt="" aria-hidden="true" width="1100" height="878" loading="lazy">
+            <img src="images/14.webp" alt="" aria-hidden="true" width="1408" height="879" loading="lazy">
+            <img src="images/15.webp" alt="" aria-hidden="true" width="1346" height="881" loading="lazy">
+            <img src="images/16.webp" alt="" aria-hidden="true" width="1407" height="879" loading="lazy">
+            <img src="images/17.webp" alt="" aria-hidden="true" width="1100" height="879" loading="lazy">
+            <img src="images/18.webp" alt="" aria-hidden="true" width="1353" height="876" loading="lazy">
+            <img src="images/19.webp" alt="" aria-hidden="true" width="1294" height="878" loading="lazy">
+            <img src="images/20.webp" alt="" aria-hidden="true" width="352" height="880" loading="lazy">
+            <img src="images/21.webp" alt="" aria-hidden="true" width="310" height="879" loading="lazy">
+            <img src="images/22.webp" alt="" aria-hidden="true" width="338" height="878" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="card">
+    <h2 class="card__title">About</h2>
+    <hr class="divider">
+    <p class="about__text">
+      I'm a UI/UX Designer and Frontend Developer who designs interfaces in Figma and builds them with HTML, CSS, JavaScript, and React. I care about clean, accessible, responsive experiences, and I like owning a project from user research and wireframes through to a deployed product. Through academic and community projects such as a library management system, a document request portal, and a case study website, I've practiced turning real user needs into working interfaces. I'm eager to grow through real-world projects.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section class="card" id="skills">
+    <h2 class="card__title">Skills</h2>
+    <hr class="divider">
+    <div class="skills-grid">
+      <div class="skills__panel">
+        <p class="skills__group-title">Design</p>
+        <ul class="skills">
+          <li>User Research</li>
+          <li>Wireframing</li>
+          <li>Prototyping</li>
+          <li>Usability Testing</li>
+          <li>Information Architecture</li>
+          <li>Accessibility (A11y)</li>
+          <li>Visual Design</li>
+          <li>Figma</li>
+          <li>Auto Layout</li>
+          <li>Canva</li>
+        </ul>
+      </div>
+      <div class="skills__panel">
+        <p class="skills__group-title">Frontend Development</p>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Tailwind CSS</li>
+          <li>Responsive Web Design</li>
+          <li>Flexbox &amp; Grid</li>
+          <li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+      <div class="skills__panel skills__panel--tools">
+        <p class="skills__group-title">Tools &amp; Platforms</p>
+        <ul class="skills">
+          <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="" aria-hidden="true" width="20" height="20" loading="lazy"><span>VS Code</span></li>
+          <li><img src="https://cdn.simpleicons.org/googlechrome" alt="" aria-hidden="true" width="20" height="20" loading="lazy"><span>Chrome DevTools</span></li>
+          <li><img src="https://cdn.simpleicons.org/vercel" alt="" aria-hidden="true" width="20" height="20" loading="lazy"><span>Vercel</span></li>
+          <li><img src="https://cdn.simpleicons.org/netlify" alt="" aria-hidden="true" width="20" height="20" loading="lazy"><span>Netlify</span></li>
+          <li><img src="https://cdn.simpleicons.org/render" alt="" aria-hidden="true" width="20" height="20" loading="lazy"><span>Render</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="card" id="contact">
+    <h2 class="card__title">Contact</h2>
+    <hr class="divider">
+    <div class="contact-links">
+      <a class="btn btn--ghost" href="mailto:jinkysuson09@gmail.com">Email</a>
+      <a class="btn btn--ghost" href="#" aria-label="GitHub profile link placeholder">GitHub</a>
+      <a class="btn btn--ghost" href="#" aria-label="LinkedIn profile link placeholder">LinkedIn</a>
+      <a class="btn btn--ghost" href="https://wa.me/639855162530" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<a href="https://wa.me/639855162530" class="fab" id="messageFab" aria-label="Message" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2C6.48 2 2 6.03 2 11c0 2.61 1.23 4.94 3.2 6.6L4 22l4.6-1.52C9.66 20.8 10.81 21 12 21c5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__backdrop" data-close="true"></div>
+  <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button type="button" class="lightbox__close" aria-label="Close preview">✕</button>
+    <img class="lightbox__image" alt="">
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
