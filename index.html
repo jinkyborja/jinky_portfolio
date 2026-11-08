@@ -36,12 +36,11 @@
     <section class="hero card" id="intro" aria-labelledby="heroTitle">
       <div class="hero__copy">
         <p class="eyebrow">JINKY SUSON <span aria-hidden="true">/</span> UI/UX DESIGN &amp; FRONTEND</p>
-        <h1 class="hero__title" id="heroTitle">UI/UX Designer <span>&amp; Frontend Developer</span></h1>
-        <p class="hero__description">I'm Jinky Suson. I design clear, user-friendly digital experiences and build them into responsive web interfaces.</p>
+        <h1 class="hero__title" id="heroTitle">Designing thoughtful digital experiences.</h1>
+        <p class="hero__description">I’m Jinky Suson, a UI/UX designer and frontend developer focused on clean interfaces, intuitive flows, and responsive websites that feel effortless to use.</p>
         <div class="hero__actions">
           <a href="#projects" class="btn btn--primary">View my work <span aria-hidden="true">&darr;</span></a>
           <a href="#contact" class="btn btn--ghost">Contact me</a>
-          <a href="assets/Jinky-Suson-CV.pdf" class="hero__resume" download="Jinky-Suson-CV.pdf">Download CV</a>
         </div>
         <p class="hero__education">BSIT, Eastern Samar State University <span aria-hidden="true">/</span> Philippines</p>
       </div>
@@ -58,10 +57,12 @@
         <p class="section-heading__description">A closer look at the interfaces and systems I’ve designed and built.</p>
       </div>
       <article class="project project--featured" aria-labelledby="docuflowTitle">
-        <img class="project__image" src="images/essudocuflow-home.webp" alt="ESSU GradDocuFlow student sign-in screen" width="1916" height="918" fetchpriority="high">
+        <a class="project__image-link project__image-link--docuflow" href="https://essu-docuflow-five.vercel.app/login" target="_blank" rel="noopener noreferrer" aria-label="Open ESSU DocuFlow live demo in a new tab">
+          <img class="project__image" src="images/essudocuflow-preview.png" alt="ESSU DocuFlow student document request portal sign-in screen" width="1547" height="768" fetchpriority="high">
+        </a>
         <div class="project__content">
           <p class="project__category">University portal <span aria-hidden="true">/</span> UI/UX case study</p>
-          <h3 class="project__title" id="docuflowTitle">ESSU GradDocuFlow</h3>
+          <h3 class="project__title" id="docuflowTitle">ESSU DocuFlow</h3>
           <p class="project__description">A portal for graduate students to request documents, track progress, and message university teams.</p>
           <div class="project__contribution">
             <p><strong>Role</strong>UI/UX Designer &amp; Frontend Developer</p>
@@ -73,7 +74,7 @@
           </ul>
           <div class="project__actions">
             <a class="project__link project__link--primary" href="case-study/essu-docuflow/index.html">View case study <span aria-hidden="true">↗</span></a>
-            <a class="project__link" href="https://essu-docuflow.vercel.app/login" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
+            <a class="project__link" href="https://essu-docuflow-five.vercel.app/login" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </article>
@@ -97,12 +98,14 @@
           </div>
         </article>
         <article class="project">
-          <img class="project__image" src="images/eindex-home.webp" alt="E-Index System sign-in screen for managing student records" width="1459" height="874" loading="lazy">
+          <a class="project__image-link project__image-link--eindex" href="https://e-index.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open E-Index System live demo in a new tab">
+            <img class="project__image" src="images/eindex-preview.png" alt="E-Index teacher portal sign-in screen with a classroom illustration" width="1547" height="768" loading="lazy">
+          </a>
           <div class="project__content">
             <p class="project__category">Information management system</p>
             <h3 class="project__title">E-Index System</h3>
             <p class="project__description">A digital index for organizing and retrieving information across categories.</p>
-            <div class="project__actions"><a class="project__link" href="https://e-index-ir8v.onrender.com" target="_blank" rel="noopener noreferrer">View live project <span aria-hidden="true">↗</span></a></div>
+            <div class="project__actions"><a class="project__link" href="https://e-index.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a></div>
           </div>
         </article>
       </div>
@@ -143,9 +146,8 @@
         <h2 class="card__title" id="aboutTitle">About</h2>
       </div>
       <div class="about__content">
-        <p class="about__text">I'm an aspiring UI/UX Designer and Frontend Developer who enjoys creating clean, responsive, user-friendly digital experiences.</p>
-        <p class="about__text">I use Figma to design interfaces and frontend technologies to bring them to life. Through academic and personal projects, I've practiced interface design, prototyping, frontend development, and improving digital experiences.</p>
-        <p class="about__text">I'm continuously learning, exploring new ideas, and looking for opportunities to grow as a designer and developer.</p>
+        <p class="about__text">I’m an aspiring UI/UX designer and frontend developer who enjoys turning ideas into clear, usable, and visually polished experiences. My focus is on creating interfaces that are easy to understand, comfortable to use, and aligned with the needs of real people.</p>
+        <p class="about__text">Through academic and personal projects, I’ve worked on interface design, prototyping, responsive frontend development, and refining digital experiences. I’m always learning, testing new ideas, and looking for opportunities to grow as both a designer and a developer.</p>
       </div>
     </section>
 
@@ -159,13 +161,13 @@
           <h3 class="skills__group-title">UI/UX Design</h3>
           <ul class="skills">
             <li>Figma</li><li>Wireframing</li><li>Prototyping</li><li>Visual hierarchy</li>
-            <li>Responsive interface design</li><li>Basic accessibility</li>
+            <li>Responsive UI design</li><li>Accessibility basics</li>
           </ul>
         </div>
         <div class="skills__panel">
           <h3 class="skills__group-title">Frontend Development</h3>
           <ul class="skills">
-            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Responsive layouts</li>
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Svelte</li><li>SvelteKit</li><li>Responsive layouts</li>
           </ul>
         </div>
         <div class="skills__panel">
@@ -194,17 +196,36 @@
 
     <section class="card section-card contact-section" id="contact" aria-labelledby="contactTitle">
       <div class="contact-section__copy">
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2 class="card__title" id="contactTitle">Let's Build Something Together</h2>
-        <p>I'm open to internship opportunities, collaborations, and opportunities to learn and grow in UI/UX design and frontend development.</p>
+        <p class="contact-section__availability"><span aria-hidden="true"></span>Open to opportunities</p>
+        <h2 class="card__title" id="contactTitle">Have a project in mind?<br>Let's make it happen.</h2>
+        <p>I'm interested in UI/UX design, frontend development, and meaningful collaborations. Let's connect and create something great.</p>
       </div>
       <div class="contact-links">
-        <a class="btn btn--primary" href="mailto:jinkysuson09@gmail.com">Email me</a>
-        <a class="btn btn--ghost" href="https://wa.me/639855162530" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a class="btn btn--ghost" href="assets/Jinky-Suson-CV.pdf" download="Jinky-Suson-CV.pdf">Download CV</a>
+        <a class="contact-action contact-action--primary" href="mailto:jinkysuson09@gmail.com">
+          <svg class="contact-action__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.75 5.75h16.5v12.5H3.75zM4.5 6.5l7.5 6 7.5-6"/></svg>
+          <span>Email Me</span>
+          <span class="contact-action__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-action" href="https://wa.me/639855162530" target="_blank" rel="noopener noreferrer">
+          <svg class="contact-action__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.6Z"/><path d="M9 8.5c.3-.6.7-.5 1-.2l1 1.4c.2.3.1.6-.2.9l-.6.6c.5 1 1.3 1.8 2.4 2.3l.6-.6c.3-.3.6-.4.9-.2l1.4 1c.3.2.4.7.1 1-.5.7-1.2 1-2 .8-2.8-.7-5-2.9-5.7-5.7-.2-.6.2-1 .9-1.3Z"/></svg>
+          <span>WhatsApp</span>
+          <span class="contact-action__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-action contact-action--cv" href="assets/Jinky-Suson-CV.pdf" download="Jinky-Suson-CV.pdf">
+          <svg class="contact-action__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.75v11.5m-4.25-4.25L12 15.75l4.25-4.75M4.75 17v3.25h14.5V17"/></svg>
+          <span>Download CV</span>
+          <span class="contact-action__arrow" aria-hidden="true">↓</span>
+        </a>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© 2026 Jinky Suson</p>
+      <a href="#intro">Back to top</a>
+    </div>
+  </footer>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox__backdrop"></div>
