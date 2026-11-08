@@ -90,6 +90,7 @@ if (lightbox) {
     lightboxImage.src = trigger.dataset.src;
     lightboxImage.alt = trigger.dataset.alt;
     lightbox.classList.add('lightbox--open');
+    lightbox.classList.toggle('lightbox--overview', trigger.dataset.lightboxMode === 'overview');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     lightboxClose.focus();
@@ -97,6 +98,7 @@ if (lightbox) {
 
   function closeLightbox() {
     lightbox.classList.remove('lightbox--open');
+    lightbox.classList.remove('lightbox--overview');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     lightboxImage.removeAttribute('src');
@@ -109,14 +111,36 @@ if (lightbox) {
 
   lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', (event) => {
-    if (event.target === lightbox || event.target.classList.contains('lightbox__backdrop')) {
+    if (event.target === lightbox || event.target.classList.contains('lightbox__backdrop')
+      || (lightbox.classList.contains('lightbox--overview') && event.target.classList.contains('lightbox__dialog'))) {
       closeLightbox();
     }
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && lightbox.classList.contains('lightbox--open')) {
+    if (!lightbox.classList.contains('lightbox--open')) return;
+
+    if (event.key === 'Escape') {
       closeLightbox();
+      return;
+    }
+
+    if (event.key === 'Tab') {
+      const focusableElements = [...lightbox.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')];
+      if (!focusableElements.length) {
+        event.preventDefault();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
     }
   });
 
