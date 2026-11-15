@@ -56,56 +56,73 @@
         <h2 class="card__title" id="projectsTitle">Featured Projects</h2>
         <p class="section-heading__description">A closer look at the interfaces and systems I’ve designed and built.</p>
       </div>
-      <article class="project project--featured" aria-labelledby="docuflowTitle">
-        <a class="project__image-link project__image-link--docuflow" href="https://essu-docuflow-five.vercel.app/login" target="_blank" rel="noopener noreferrer" aria-label="Open ESSU DocuFlow live demo in a new tab">
-          <img class="project__image" src="images/essudocuflow-preview.png" alt="ESSU DocuFlow student document request portal sign-in screen" width="1547" height="768" fetchpriority="high">
-        </a>
-        <div class="project__content">
-          <p class="project__category">University portal <span aria-hidden="true">/</span> UI/UX case study</p>
-          <h3 class="project__title" id="docuflowTitle">ESSU DocuFlow</h3>
-          <p class="project__description">A portal for graduate students to request documents, track progress, and message university teams.</p>
-          <div class="project__contribution">
-            <p><strong>Role</strong>UI/UX Designer &amp; Frontend Developer</p>
-            <p><strong>Contribution</strong>Designed and developed responsive Student, Admin, and Staff portals for dashboards, requests, tracking, messaging, and document management, focusing on usability, consistent components, and frontend functionality.</p>
-          </div>
-          <ul class="project__technologies" aria-label="Technologies used">
-            <li>SvelteKit</li><li>Svelte</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
-            <li>MySQL</li><li>Node.js</li><li>Git</li><li>GitHub</li><li>VS Code</li>
-          </ul>
-          <div class="project__actions">
-            <a class="project__link project__link--primary" href="case-study/essu-docuflow/index.html">View case study <span aria-hidden="true">↗</span></a>
-            <a class="project__link" href="https://essu-docuflow-five.vercel.app/login" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </article>
-      <div class="projects-list">
-        <article class="project">
-          <img class="project__image" src="images/sapao-home.webp" alt="Sapao Coast website homepage with coastal photography and navigation" width="1076" height="832" loading="lazy">
+      <div class="projects-list project-grid">
+        <article class="project" aria-labelledby="docuflowTitle">
+          <a class="project__image-link" href="case-study/essu-docuflow/index.html" aria-label="View ESSU DocuFlow case study">
+            <img class="project__image" src="images/essudocuflow-preview.png" alt="ESSU DocuFlow student document request portal sign-in screen" width="1547" height="768" fetchpriority="high">
+          </a>
           <div class="project__content">
-            <p class="project__category">Community extension website</p>
-            <h3 class="project__title">Sapao Coast Extensions</h3>
-            <p class="project__description">A community-facing website introducing local places, culture, and university extension programs.</p>
-            <div class="project__actions"><a class="project__link" href="https://sapao-coast.vercel.app/" target="_blank" rel="noopener noreferrer">View live project <span aria-hidden="true">↗</span></a></div>
+            <p class="project__category">University portal <span aria-hidden="true">/</span> UI/UX case study</p>
+            <h3 class="project__title" id="docuflowTitle">ESSU DocuFlow</h3>
+            <p class="project__description">A portal for graduate students to request documents, track progress, and message university teams.</p>
+            <ul class="project__technologies" aria-label="Project tags">
+              <li>SvelteKit</li><li>JavaScript</li><li>MySQL</li>
+            </ul>
+            <div class="project__actions">
+              <a class="project__link project__link--primary" href="case-study/essu-docuflow/index.html">View Case Study <span aria-hidden="true">↗</span></a>
+              <a class="project__link" href="https://essu-docuflow-five.vercel.app/login" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </article>
-        <article class="project">
-          <img class="project__image" src="images/library.webp" alt="RFID Library System administrator sign-in screen" width="1735" height="902" loading="lazy">
-          <div class="project__content">
-            <p class="project__category">Library management system</p>
-            <h3 class="project__title">RFID Library System</h3>
-            <p class="project__description">A library system focused on RFID-supported book tracking and checkout workflows.</p>
-            <div class="project__actions"><a class="project__link" href="https://rfid-library-r38h.onrender.com" target="_blank" rel="noopener noreferrer">View live project <span aria-hidden="true">↗</span></a></div>
-          </div>
-        </article>
-        <article class="project">
-          <a class="project__image-link project__image-link--eindex" href="https://e-index.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open E-Index System live demo in a new tab">
+        <article class="project" aria-labelledby="eindexTitle">
+          <a class="project__image-link project__image-link--eindex" href="case-study/e-index-system/index.html" aria-label="View E-Index System case study">
             <img class="project__image" src="images/eindex-preview.png" alt="E-Index teacher portal sign-in screen with a classroom illustration" width="1547" height="768" loading="lazy">
           </a>
           <div class="project__content">
-            <p class="project__category">Information management system</p>
-            <h3 class="project__title">E-Index System</h3>
-            <p class="project__description">A digital index for organizing and retrieving information across categories.</p>
-            <div class="project__actions"><a class="project__link" href="https://e-index.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo <span aria-hidden="true">↗</span></a></div>
+            <p class="project__category">Academic information system</p>
+            <h3 class="project__title" id="eindexTitle">E-Index System</h3>
+            <p class="project__description">Teacher and administration portals for class management, student records, attendance with an RFID scan simulation, and academic reports.</p>
+            <ul class="project__technologies" aria-label="Project tags">
+              <li>Stack not documented</li><li>Teacher portal</li><li>Attendance &amp; RFID</li>
+            </ul>
+            <div class="project__actions">
+              <a class="project__link project__link--primary" href="case-study/e-index-system/index.html">View Case Study <span aria-hidden="true">↗</span></a>
+              <a class="project__link" href="https://e-index.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project" aria-labelledby="sapaoTitle">
+          <a class="project__image-link" href="case-study/sapao-coast-extensions/index.html" aria-label="View Sapao Coast Extensions case study">
+            <img class="project__image" src="images/sapao-home.webp" alt="Sapao Coast homepage with coastal photography and site navigation" width="1095" height="850" loading="lazy">
+          </a>
+          <div class="project__content">
+            <p class="project__category">Community extension website</p>
+            <h3 class="project__title" id="sapaoTitle">Sapao Coast Extensions</h3>
+            <p class="project__description">A community-facing website introducing Sapao’s coastline, local places, culture, and visit-planning information.</p>
+            <ul class="project__technologies" aria-label="Project tags">
+              <li>Stack not documented</li><li>Coastal website</li><li>Plan a visit</li>
+            </ul>
+            <div class="project__actions">
+              <a class="project__link project__link--primary" href="case-study/sapao-coast-extensions/index.html">View Case Study <span aria-hidden="true">↗</span></a>
+              <a class="project__link" href="https://sapao-coast.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="project" aria-labelledby="rfidTitle">
+          <a class="project__image-link" href="case-study/rfid-library-system/index.html" aria-label="View RFID Library System case study">
+            <img class="project__image" src="images/library.webp" alt="RFID Library System administrator sign-in screen" width="1735" height="903" loading="lazy">
+          </a>
+          <div class="project__content">
+            <p class="project__category">Library management system</p>
+            <h3 class="project__title" id="rfidTitle">RFID Library System</h3>
+            <p class="project__description">A library system focused on RFID-supported book tracking and checkout workflows.</p>
+            <ul class="project__technologies" aria-label="Project tags">
+              <li>Stack not documented</li><li>Library system</li><li>RFID</li>
+            </ul>
+            <div class="project__actions">
+              <a class="project__link project__link--primary" href="case-study/rfid-library-system/index.html">View Case Study <span aria-hidden="true">↗</span></a>
+              <a class="project__link" href="https://rfid-library-r38h.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </article>
       </div>
