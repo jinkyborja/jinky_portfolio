@@ -23,7 +23,7 @@
   </button>
 </header>
 <main class="page case-study">
-  <a class="project__link case-study__back" href="../../index.html#projects">&larr; All projects</a>
+  <a class="project__link case-study__back" href="../../index.html#projects">&larr; Back to Projects</a>
   <section class="card">
     <p class="skills__group-title">CASE STUDY / UI-UX DESIGN</p>
     <h1 class="profile__name">ESSU DocuFlow</h1>
@@ -31,38 +31,24 @@
     <img class="case-study__image" src="../../images/essudocuflow-preview.png" alt="ESSU DocuFlow student document request portal sign-in screen" width="1547" height="768" fetchpriority="high">
   </section>
   <section class="card case-study__section" id="problem">
-    <h2>Problem</h2>
-    <p>Graduate students need to request official documents from the Graduate School, but the process can feel unclear when request requirements, progress, and next steps are spread across separate interactions. The portal brings the request journey and its status into one place.</p>
+    <h2>Problem &amp; Project Context</h2>
+    <p>I designed DocuFlow around graduate students’ requests for official documents from the Graduate School. I brought request requirements, progress, and next steps into the student request experience.</p>
   </section>
   <section class="card case-study__section" id="users">
-    <h2>Users</h2>
-    <p>The primary users are Eastern Samar State University Graduate School students who need documents, plus school staff who receive and process those requests.</p>
+    <h2>Project Objectives &amp; Target Users</h2>
+    <p>I designed DocuFlow for Eastern Samar State University Graduate School students who request documents and the staff who receive and process them. I organized the experience across the Student, Admin, and Staff portals.</p>
   </section>
   <section class="card case-study__section" id="my-role">
     <h2>My Role</h2>
-    <p>I worked as the UI/UX Designer and Frontend Developer, designing and developing responsive interfaces for the Student, Admin, and Staff portals. My contributions included dashboards, document request forms, request tracking, messaging, and document management pages, with a focus on usability, consistent design components, and frontend functionality.</p>
+    <p>I worked as the UI/UX Designer and Frontend Developer, designing and developing responsive interfaces for the Student, Admin, and Staff portals. I designed dashboards, document request forms, request tracking, messaging, and document management pages, using consistent components and frontend functionality.</p>
   </section>
   <section class="card case-study__section" id="research">
-    <h2>Design Process</h2>
-    <p>The documented work includes a student request flow, wireframes for the dashboard, submission review, and tracking, plus final interface screens. Add any interviews, prototyping, or usability testing only if you conducted them.</p>
-  </section>
-  <section class="card case-study__section" id="user-flow">
-    <h2>User Flow</h2>
-    <ol class="case-study__flow">
-      <li>Create an account or sign in</li>
-      <li>Choose a document</li>
-      <li>Enter request details</li>
-      <li>Review and submit</li>
-      <li>Track progress and receive updates</li>
-    </ol>
+    <h2>Design Process &amp; Information Architecture</h2>
+    <p>I mapped the student request flow from account access and document selection through request details, review, submission, and tracking. I created wireframes for the dashboard, submission review, and tracking views, then carried the flow into the final interfaces.</p>
   </section>
   <section class="card case-study__section" id="design-decisions">
-    <h2>Design Decisions</h2>
-    <p>The request review brings key details together in one scannable table, while a visible step indicator clarifies progress. The tracking view pairs a vertical status timeline with request details so students can find both progress and context in one place.</p>
-  </section>
-  <section class="card case-study__section" id="wireframes">
     <h2>Wireframes</h2>
-    <p>The page structure groups account access, document selection, request details, review, and tracking into distinct steps.</p>
+    <p>I used wireframes to shape the student dashboard, request review, and tracking screens. I organized the request flow into account access, document selection, request details, review, and tracking.</p>
     <div class="wireframes-grid">
       <figure class="wireframe">
         <img src="../../images/student dashboard.png" alt="Low-fidelity wireframe of the student dashboard with summary cards, a recent requests table, and announcements" width="1404" height="878" loading="lazy">
@@ -87,9 +73,13 @@
       </figure>
     </div>
   </section>
+  <section class="card case-study__section" id="design-decisions">
+    <h2>Interface Patterns</h2>
+    <p>I brought request details together in a scannable review table and used a visible step indicator to clarify progress. I paired the tracking timeline with request details so students can see status and context together.</p>
+  </section>
   <section class="card case-study__section" id="final-ui">
     <h2>Final UI</h2>
-    <p>The final interface pairs a student-facing request journey with status tracking and administrative screens for the Graduate School Office.</p>
+    <p>I designed student-facing request and tracking screens alongside administrative interfaces for the Graduate School Office. I show the Student, Admin, and Staff portal screens below.</p>
     <h3 class="final-ui__group">Student Portal</h3>
     <figure class="final-ui__figure">
       <img class="case-study__image" src="../../images/4_student_dashboard.png" alt="ESSU DocuFlow student portal dashboard with the next request step and recent notifications" width="1599" height="768" fetchpriority="high">
@@ -119,27 +109,23 @@
     <p class="final-ui__note">Screens shown with sample data.</p>
   </section>
   <section class="card case-study__section" id="system-design-overview">
-    <h2>System Design Overview</h2>
-    <p>The complete ESSU DocuFlow design covers three portals for students, administrators and staff, built on one shared design system: a consistent green navigation, card layouts and status patterns across more than 30 screens.</p>
+    <h3 class="final-ui__group">System Design Overview</h3>
+    <p>I designed three portals for students, administrators, and staff around a shared system of navigation, cards, and status patterns.</p>
     <figure class="system-overview__figure">
       <img src="../../images/full_system_mockup.png" alt="Full Figma mockup of the ESSU DocuFlow system showing the student, admin and staff portal screens" width="1683" height="768" loading="lazy">
       <figcaption>
         <p class="system-overview__legend">Student Portal · Admin Portal · Staff Portal</p>
-        <p class="system-overview__note">Overview of all screens in Figma.</p>
+        <p class="system-overview__note">I used this Figma overview to bring the portal screens together.</p>
       </figcaption>
     </figure>
   </section>
   <section class="card case-study__section" id="frontend-implementation">
-    <h2>Frontend Implementation</h2>
-    <p>The live project preview is available at <a class="project__link" href="https://essu-docuflow-five.vercel.app/login" target="_blank" rel="noopener noreferrer">ESSU DocuFlow <span aria-hidden="true">↗</span></a>. The project used SvelteKit, Svelte, HTML, CSS, JavaScript, MySQL, and Node.js. Git, GitHub, and VS Code were part of the development toolset.</p>
-  </section>
-  <section class="card case-study__section" id="challenges">
-    <h2>Challenges &amp; Improvements</h2>
-    <p>Details to add: a real design or implementation challenge, how you addressed it, and what you would improve next. No usability test findings or outcome metrics are documented here.</p>
-  </section>
-  <section class="card case-study__section" id="what-i-learned">
-    <h2>Results &amp; Learnings</h2>
-    <p>The design makes the request sequence, review details, and tracking status visible in the supplied screens. Add verified outcomes and personal reflections here; no measured results are currently available.</p>
+    <h2>Tech Stack &amp; Deployment</h2>
+    <p><strong>Frontend:</strong> SvelteKit, Svelte, HTML, CSS, JavaScript<br>
+      <strong>Backend:</strong> Node.js<br>
+      <strong>Database:</strong> MySQL<br>
+      <strong>Hosting:</strong> Vercel</p>
+    <p>Explore the live <a class="project__link" href="https://essu-docuflow-five.vercel.app/login" target="_blank" rel="noopener noreferrer">ESSU DocuFlow demo <span aria-hidden="true">↗</span></a>.</p>
   </section>
   <nav class="case-study__navigation" aria-label="Case study navigation">
     <a class="project__link" href="../../index.html#projects">&larr; Back to Projects</a>
