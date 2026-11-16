@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RFID Library System Case Study — Jinky Suson</title>
-<meta name="description" content="A case study of the RFID Library System dashboard, student management, registration, and visit log interfaces.">
+<meta name="description" content="A case study of the RFID Library System admin interface, student check-in flow, and Visit Log.">
 <meta property="og:title" content="RFID Library System Case Study — Jinky Suson">
-<meta property="og:description" content="An RFID-focused library system for book tracking and checkout workflows.">
+<meta property="og:description" content="An RFID library system for student check-ins and library attendance records.">
 <meta property="og:image" content="https://jinkysuson.vercel.app/images/rfid-library-admin-login.png">
 <meta property="og:type" content="article">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
@@ -27,32 +27,32 @@
   <section class="card">
     <p class="skills__group-title">CASE STUDY / LIBRARY MANAGEMENT</p>
     <h1 class="profile__name">RFID Library System</h1>
-    <p class="case-study__intro">The dashboard provides an overview of library activity, featuring an RFID card scanner for student check-ins and a Top Visitors table displaying students ranked by their visit frequency.</p>
+    <p class="case-study__intro">I designed and built an RFID library system with an admin dashboard, a card scanner for student check-ins, and a Visit Log for library attendance.</p>
     <img class="case-study__image" src="../../images/rfid-library-admin-login.png" alt="RFID Library System administrator login screen" width="1599" height="768" fetchpriority="high">
   </section>
   <section class="card case-study__section" id="problem">
     <h2>Problem &amp; Project Context</h2>
-    <p>The existing portfolio describes the project as a library system focused on RFID-supported book tracking and checkout workflows. A separate written problem statement or project brief was not supplied.</p>
+    <p>I built the system around RFID student check-ins and a record of library visits. Its dashboard and Visit Log bring check-in and library attendance information into the admin interface.</p>
   </section>
   <section class="card case-study__section" id="objectives-users">
     <h2>Project Objectives &amp; Target Users</h2>
-    <p>Formal objectives and specific library user groups were not documented. The available interface is labeled “Library RFID” and “Attendance Management System” and presents an Admin Login, identifying an administrator-facing entry point.</p>
+    <p>I designed the system for administrators managing library check-ins and attendance records, with students checking in using RFID cards. The dashboard scanner supports check-ins, while the Visit Log presents library attendance.</p>
   </section>
   <section class="card case-study__section" id="my-role">
     <h2>My Role</h2>
-    <p>Your specific design, development, or collaboration responsibilities are not documented in the supplied project materials. This section is kept factual until those contributions are confirmed.</p>
+    <p>I worked as the designer and developer from end to end. I designed the admin interface and dashboard, built the RFID check-in flow and Visit Log, and deployed the system myself.</p>
   </section>
   <section class="card case-study__section" id="system-workflow">
-    <h2>System Workflow</h2>
-    <p>The documented project focus is RFID-supported book tracking and checkout. Detailed workflow steps, reader behavior, transaction states, and process diagrams were not included in the available materials.</p>
+    <h2>Design Process &amp; Information Architecture</h2>
+    <p>I designed the admin dashboard around the RFID card scanner for student check-ins. I included a Visit Log so administrators can review library attendance.</p>
   </section>
   <section class="card case-study__section" id="design-process">
-    <h2>Design Process &amp; Interface</h2>
-    <p>The supplied screenshots show the RFID library dashboard, student management, a student registration form, and visit logs.</p>
+    <h2>Wireframes &amp; Interface Patterns</h2>
+    <p>I designed the dashboard to bring the RFID card scanner and library activity overview together. I kept the Visit Log as a dedicated view for library attendance.</p>
   </section>
   <section class="card case-study__section" id="final-ui">
     <h2>Final UI</h2>
-    <p>The dashboard, student management, registration, and visit log screens are shown below.</p>
+    <p>I designed the dashboard and Visit Log interfaces shown below. The dashboard centers the RFID check-in flow, and the Visit Log presents library attendance.</p>
     <h3 class="final-ui__group">Dashboard</h3>
     <figure class="final-ui__figure">
       <img class="case-study__image" src="../../images/rfid-library-dashboard.png" alt="The dashboard provides an overview of library activity, featuring an RFID card scanner for student check-ins and a Top Visitors table displaying students ranked by their visit frequency." width="1547" height="768" loading="lazy">
@@ -76,19 +76,23 @@
   </section>
   <section class="card case-study__section" id="rfid-features">
     <h2>RFID-related Interface Features</h2>
-    <p>The dashboard includes the RFID card scanner for student check-ins, and the Visit Log shows library attendance records.</p>
+    <p>I built the dashboard with an RFID card scanner for student check-ins. I also built the Visit Log to show library attendance.</p>
   </section>
   <section class="card case-study__section" id="implementation">
-    <h2>Frontend Implementation</h2>
-    <p>The project’s frontend stack and individual implementation contributions were not included in the supplied materials. The <a class="project__link" href="https://rfid-library-r38h.onrender.com" target="_blank" rel="noopener noreferrer">RFID Library live demo <span aria-hidden="true">↗</span></a> is available to explore.</p>
+    <h2>Tech Stack &amp; Deployment</h2>
+    <p><strong>Frontend:</strong> HTML, CSS, JavaScript<br>
+      <strong>Backend:</strong> Node.js<br>
+      <strong>Database:</strong> PostgreSQL on Aiven<br>
+      <strong>Hosting:</strong> Render</p>
+    <p>Explore the <a class="project__link" href="https://rfid-library-r38h.onrender.com" target="_blank" rel="noopener noreferrer">RFID Library live demo <span aria-hidden="true">↗</span></a>.</p>
   </section>
-  <section class="card case-study__section" id="learnings">
-    <h2>Challenges &amp; Learnings</h2>
-    <p>Personal challenges and learning notes were not provided. Add confirmed examples here rather than presenting assumptions as project outcomes.</p>
-  </section>
+  <!-- TODO: Add a confirmed challenge and learning. -->
   <nav class="case-study__navigation" aria-label="Case study navigation">
-    <a class="project__link" href="../../index.html#projects">&larr; Back to Projects</a>
-    <a class="project__link" href="../sapao-coast-extensions/index.html">&larr; Sapao Coast Extensions</a>
+    <div>
+      <a class="project__link" href="../e-index-system/index.html">&larr; Previous: E-Index System</a>
+      <a class="project__link" href="../../index.html#projects">&larr; Back to Projects</a>
+    </div>
+    <a class="project__link" href="../sapao-coast-extensions/index.html">Next: Sapao Coast &rarr;</a>
   </nav>
 </main>
 <div class="lightbox" id="lightbox" aria-hidden="true">
