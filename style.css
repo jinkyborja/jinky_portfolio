@@ -599,9 +599,7 @@ body:has(.lightbox--open) { overflow: hidden; }
 .case-study__section .final-ui__note { margin: 0; }
 
 .system-overview__figure { margin: 16px 0 0; }
-.system-overview__image-button { display: block; width: 100%; overflow: hidden; padding: 0; border: 0; border-radius: 12px; background: var(--surface); cursor: zoom-in; line-height: 0; }
-.system-overview__image-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.system-overview__image-button img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+.system-overview__figure > img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
 .case-study__section .system-overview__legend, .case-study__section .system-overview__note { font-size: 12px; line-height: 1.6; }
 .case-study__section .system-overview__legend { margin: 10px 0 0; color: var(--text); }
 .case-study__section .system-overview__note { margin: 4px 0 0; color: var(--text-dim); }
@@ -614,9 +612,7 @@ body:has(.lightbox--open) { overflow: hidden; }
 .case-study__flow { margin: 0; padding-left: 20px; }
 .wireframes-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
 .wireframe { min-width: 0; margin: 0; }
-.wireframe__image-button { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; line-height: 0; }
-.wireframe__image-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.wireframe__image-button img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); background: #fff; }
+.wireframe > img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); background: #fff; }
 .wireframe figcaption { margin-top: 12px; }
 .wireframe figcaption h3 { margin: 0 0 6px; color: var(--text); font-size: 15px; }
 .wireframe figcaption p { margin: 0; }

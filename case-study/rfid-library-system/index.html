@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RFID Library System Case Study — Jinky Suson</title>
-<meta name="description" content="A case study of the RFID Library System sign-in interface and documented project scope.">
+<meta name="description" content="A case study of the RFID Library System dashboard, student management, registration, and visit log interfaces.">
 <meta property="og:title" content="RFID Library System Case Study — Jinky Suson">
 <meta property="og:description" content="An RFID-focused library system for book tracking and checkout workflows.">
-<meta property="og:image" content="https://jinkysuson.vercel.app/images/library.png">
+<meta property="og:image" content="https://jinkysuson.vercel.app/images/rfid-library-admin-login.png">
 <meta property="og:type" content="article">
 <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +27,8 @@
   <section class="card">
     <p class="skills__group-title">CASE STUDY / LIBRARY MANAGEMENT</p>
     <h1 class="profile__name">RFID Library System</h1>
-    <p class="case-study__intro">A library management system focused on RFID-supported book tracking and checkout workflows.</p>
-    <img class="case-study__image" src="../../images/library.webp" alt="RFID Library System administrator sign-in page for an attendance management system" width="1735" height="903" fetchpriority="high">
+    <p class="case-study__intro">The dashboard provides an overview of library activity, featuring an RFID card scanner for student check-ins and a Top Visitors table displaying students ranked by their visit frequency.</p>
+    <img class="case-study__image" src="../../images/rfid-library-admin-login.png" alt="RFID Library System administrator login screen" width="1599" height="768" fetchpriority="high">
   </section>
   <section class="card case-study__section" id="problem">
     <h2>Problem &amp; Project Context</h2>
@@ -48,22 +48,35 @@
   </section>
   <section class="card case-study__section" id="design-process">
     <h2>Design Process &amp; Interface</h2>
-    <p>No wireframes or process notes were supplied. The available screen shows an administrator sign-in form with username and password fields, a remember-me option, and a password-recovery link.</p>
+    <p>The supplied screenshots show the RFID library dashboard, student management, a student registration form, and visit logs.</p>
   </section>
   <section class="card case-study__section" id="final-ui">
     <h2>Final UI</h2>
-    <p>The portfolio currently contains the administrator sign-in screen. Additional project screenshots can be added here individually when supplied.</p>
-    <h3 class="final-ui__group">Administrator Portal</h3>
+    <p>The dashboard, student management, registration, and visit log screens are shown below.</p>
+    <h3 class="final-ui__group">Dashboard</h3>
     <figure class="final-ui__figure">
-      <button type="button" class="wireframe__image-button" data-lightbox data-lightbox-mode="overview" data-src="../../images/library.webp" data-alt="RFID Library System administrator sign-in page with username and password fields" aria-label="Open RFID Library System sign-in screenshot">
-        <img class="case-study__image" src="../../images/library.webp" alt="RFID Library System administrator sign-in page with username and password fields" width="1735" height="903" loading="lazy">
-      </button>
-      <figcaption class="final-ui__caption">Administrator sign-in screen. The RFID scanning and book-checkout interface was not included in the available screenshots.</figcaption>
+      <img class="case-study__image" src="../../images/rfid-library-dashboard.png" alt="The dashboard provides an overview of library activity, featuring an RFID card scanner for student check-ins and a Top Visitors table displaying students ranked by their visit frequency." width="1547" height="768" loading="lazy">
+      <figcaption class="final-ui__caption">The dashboard provides an overview of library activity, featuring an RFID card scanner for student check-ins and a Top Visitors table displaying students ranked by their visit frequency.</figcaption>
+    </figure>
+    <h3 class="final-ui__group">Students Management</h3>
+    <figure class="final-ui__figure">
+      <img class="case-study__image" src="../../images/rfid-library-students.png" alt="The Students Management page allows administrators to manage student records, search and filter students by college, course, year level, and section, and perform editing and deletion actions." width="1547" height="768" loading="lazy">
+      <figcaption class="final-ui__caption">The Students Management page allows administrators to manage student records, search and filter students by college, course, year level, and section, and perform editing and deletion actions.</figcaption>
+    </figure>
+    <h3 class="final-ui__group">Add Student Form</h3>
+    <figure class="final-ui__figure">
+      <img class="case-study__image" src="../../images/rfid-library-add-student.png" alt="The Add Student modal provides a structured form for registering students using their RFID number, first name, last name, college, course, year level, and section." width="1547" height="768" loading="lazy">
+      <figcaption class="final-ui__caption">The Add Student modal provides a structured form for registering students using their RFID number, first name, last name, college, course, year level, and section.</figcaption>
+    </figure>
+    <h3 class="final-ui__group">Visit Log</h3>
+    <figure class="final-ui__figure">
+      <img class="case-study__image" src="../../images/rfid-library-visit-log.png" alt="The Visit Log records student library visits, including dates, times, student names, courses, and year and section information. Administrators can filter records to monitor library attendance." width="1547" height="768" loading="lazy">
+      <figcaption class="final-ui__caption">The Visit Log records student library visits, including dates, times, student names, courses, and year and section information. Administrators can filter records to monitor library attendance.</figcaption>
     </figure>
   </section>
   <section class="card case-study__section" id="rfid-features">
     <h2>RFID-related Interface Features</h2>
-    <p>The project description identifies RFID-supported book tracking and checkout, but the supplied UI image shows only the sign-in screen. No scan station or RFID transaction screen is presented here.</p>
+    <p>The dashboard includes the RFID card scanner for student check-ins, and the Visit Log shows library attendance records.</p>
   </section>
   <section class="card case-study__section" id="implementation">
     <h2>Frontend Implementation</h2>
