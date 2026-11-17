@@ -245,19 +245,21 @@ if (lightbox) {
       const rowStep = Math.round(baseWidth * 0.77) + gapY;
       const columnStep = baseWidth + gapX;
       const sizeFactors = [1.08, 0.88, 1, 1.13, 0.94, 0.9, 1.12, 0.96, 1.06, 0.86, 1.1];
+      const layoutSlots = [1, 2, 6, 7, 0, 3, 4, 5, 8];
       let rightEdge = 0;
       let bottomEdge = 0;
 
       galleryItems.forEach((item, index) => {
-        const row = Math.floor(index / 5);
-        const column = index % 5;
-        const factor = sizeFactors[(index * 7) % sizeFactors.length];
+        const layoutIndex = layoutSlots[index];
+        const row = Math.floor(layoutIndex / 5);
+        const column = layoutIndex % 5;
+        const factor = sizeFactors[(layoutIndex * 7) % sizeFactors.length];
         const width = Math.round(baseWidth * factor);
         const jitterX = ((row * 17 + column * 23) % 29) - 14;
         const jitterY = ((row * 19 + column * 13) % 25) - 12;
         const left = margin + column * columnStep + jitterX;
         const top = margin + row * rowStep + jitterY;
-        const tilt = ((index * 17) % 9) - 4;
+        const tilt = ((layoutIndex * 17) % 9) - 4;
         const image = item.querySelector('img');
         const aspectRatio = image?.naturalWidth
           ? image.naturalHeight / image.naturalWidth
@@ -268,7 +270,7 @@ if (lightbox) {
         item.style.top = `${top}px`;
         item.style.width = `${width}px`;
         item.style.setProperty('--tilt', `${tilt * 0.32}deg`);
-        item.style.zIndex = String(2 + (index * 3) % 19);
+        item.style.zIndex = String(2 + (layoutIndex * 3) % 19);
         rightEdge = Math.max(rightEdge, left + width + margin);
         bottomEdge = Math.max(bottomEdge, top + height + margin);
       });
