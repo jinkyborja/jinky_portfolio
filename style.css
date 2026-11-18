@@ -377,7 +377,7 @@ h1, h2, h3 { margin: 0; font-family: 'Space Grotesk', 'Inter', sans-serif; }
   grid-template-columns: minmax(0, 1fr) minmax(240px, 0.62fr);
   align-items: center;
   gap: clamp(28px, 6vw, 72px);
-  overflow: hidden;
+  overflow: visible;
   border-color: rgba(182, 168, 255, 0.2);
   background:
     radial-gradient(ellipse at 92% 8%, rgba(116, 94, 204, 0.16), transparent 34%),
@@ -385,6 +385,7 @@ h1, h2, h3 { margin: 0; font-family: 'Space Grotesk', 'Inter', sans-serif; }
   box-shadow: 0 18px 48px rgba(11, 12, 20, 0.2);
   color: #f4f3fa;
 }
+.contact-section:has(.contact-cv.is-open) { z-index: 2; }
 .contact-section__copy { max-width: 580px; min-width: 0; }
 .contact-section__availability {
   display: inline-flex;
@@ -452,7 +453,75 @@ h1, h2, h3 { margin: 0; font-family: 'Space Grotesk', 'Inter', sans-serif; }
   background: color-mix(in srgb, var(--contact-accent) 82%, white);
   box-shadow: 0 10px 24px rgba(129, 109, 224, 0.28);
 }
-.contact-action--cv { background: transparent; }
+.contact-cv {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.contact-cv.is-open { z-index: 4; }
+.contact-action--cv {
+  width: 100%;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.cv-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 5;
+  width: min(280px, calc(100vw - 32px));
+  padding: 6px;
+  border: 1px solid rgba(235, 231, 255, 0.18);
+  border-radius: 13px;
+  background: #191824;
+  box-shadow: 0 14px 34px rgba(8, 8, 16, 0.38);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-5px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0s linear 0.16s;
+}
+.cv-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  transition-delay: 0s;
+}
+.cv-menu__option {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  border-radius: 8px;
+  color: #f5f3fc;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+.cv-menu__option:hover {
+  background: rgba(198, 187, 255, 0.12);
+  color: #d7d0ff;
+}
+.cv-menu__option:focus-visible {
+  outline: 2px solid #c6bbff;
+  outline-offset: -2px;
+}
+.cv-menu__option svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
 .contact-action__icon {
   width: 18px;
   height: 18px;

@@ -28,6 +28,42 @@ if (themeToggle) {
   });
 }
 
+const cvMenuToggle = document.getElementById('cvMenuToggle');
+const cvMenu = document.getElementById('cvMenu');
+
+if (cvMenuToggle && cvMenu) {
+  const cvDropdown = cvMenuToggle.closest('.contact-cv');
+
+  function setCvMenuOpen(isOpen) {
+    cvMenu.classList.toggle('is-open', isOpen);
+    cvDropdown.classList.toggle('is-open', isOpen);
+    cvMenu.setAttribute('aria-hidden', String(!isOpen));
+    cvMenuToggle.setAttribute('aria-expanded', String(isOpen));
+  }
+
+  cvMenuToggle.addEventListener('click', () => {
+    setCvMenuOpen(!cvMenu.classList.contains('is-open'));
+  });
+
+  cvMenu.addEventListener('click', (event) => {
+    if (event.target.closest('a')) {
+      setCvMenuOpen(false);
+      cvMenuToggle.focus();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!cvDropdown.contains(event.target)) setCvMenuOpen(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && cvMenu.classList.contains('is-open')) {
+      setCvMenuOpen(false);
+      cvMenuToggle.focus();
+    }
+  });
+}
+
 if (navToggle && mainNav) {
   function setNavigationOpen(isOpen) {
     mainNav.classList.toggle('is-open', isOpen);
