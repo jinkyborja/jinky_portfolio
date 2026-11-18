@@ -238,6 +238,7 @@ h1, h2, h3 { margin: 0; font-family: 'Space Grotesk', 'Inter', sans-serif; }
 .project-grid { grid-auto-rows: 1fr; }
 .project-grid .project__image-link { aspect-ratio: 16 / 9; flex: none; background: var(--surface); }
 .project-grid .project__image { height: 100%; object-fit: cover; }
+.project-grid .project__image-link--contain .project__image { object-fit: contain; }
 .project-grid .project__content { gap: 10px; padding: clamp(18px, 3vw, 26px); }
 .project-grid .project__description { display: -webkit-box; min-height: calc(1.55em * 3); overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .project {
@@ -272,6 +273,9 @@ h1, h2, h3 { margin: 0; font-family: 'Space Grotesk', 'Inter', sans-serif; }
 }
 .project__image-link:hover .project__image {
   transform: scale(1.025);
+}
+.project__image-link--contain:hover .project__image {
+  transform: none;
 }
 .project__image-link:focus-visible {
   outline: 2px solid var(--accent);
