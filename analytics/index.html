@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Private Analytics — Jinky Suson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="analytics.css">
+</head>
+<body class="analytics-page">
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__brand" href="../index.html"><span class="topbar__dot" aria-hidden="true"></span>Jinky Suson</a>
+      <span class="analytics-header__label">Private analytics</span>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+        <span class="theme-toggle__icon" aria-hidden="true">☾</span>
+        <span class="theme-toggle__text">Dark Mode</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="analytics-shell">
+    <section class="analytics-login card" id="loginPanel" aria-labelledby="loginTitle">
+      <p class="eyebrow">OWNER ACCESS</p>
+      <h1 class="card__title" id="loginTitle">Sign in to analytics</h1>
+      <p class="analytics-muted">This private dashboard is available only to the portfolio owner.</p>
+      <form class="analytics-login__form" id="loginForm">
+        <label for="ownerEmail">Owner email</label>
+        <input id="ownerEmail" name="email" type="email" autocomplete="username" required>
+        <label for="ownerPassword">Password</label>
+        <input id="ownerPassword" name="password" type="password" autocomplete="current-password" required>
+        <button class="analytics-button analytics-button--primary" type="submit">Sign in</button>
+        <p class="analytics-status" id="loginStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="analytics-dashboard" id="dashboardPanel" hidden aria-labelledby="dashboardTitle">
+      <div class="analytics-dashboard__heading">
+        <div>
+          <p class="eyebrow">PRIVATE OVERVIEW</p>
+          <h1 id="dashboardTitle">Portfolio analytics</h1>
+          <p class="analytics-muted">Anonymous, consented activity. Visitor counts are distinct from page views; event records expire after 13 months.</p>
+        </div>
+        <button class="analytics-button" id="logoutButton" type="button">Sign out</button>
+      </div>
+
+      <form class="analytics-filters card" id="filtersForm">
+        <div>
+          <label for="rangeStart">From</label>
+          <input id="rangeStart" name="start" type="date" required>
+        </div>
+        <div>
+          <label for="rangeEnd">To</label>
+          <input id="rangeEnd" name="end" type="date" required>
+        </div>
+        <div>
+          <label for="chartGroup">Chart interval</label>
+          <select id="chartGroup" name="group">
+            <option value="day">Daily</option>
+            <option value="week">Weekly</option>
+            <option value="month">Monthly</option>
+          </select>
+        </div>
+        <button class="analytics-button analytics-button--primary" type="submit">Apply filters</button>
+      </form>
+      <p class="analytics-status" id="dashboardStatus" role="status" aria-live="polite"></p>
+
+      <section class="analytics-stats" aria-label="Analytics overview">
+        <article class="analytics-stat card"><span>Total unique visitors</span><strong id="totalVisitors">—</strong><small>Up to 13 months of records</small></article>
+        <article class="analytics-stat card"><span>Total page views</span><strong id="totalViews">—</strong><small>Up to 13 months of records</small></article>
+        <article class="analytics-stat card"><span>Visitors in range</span><strong id="rangeVisitors">—</strong><small id="rangeVisitorsNote">Selected dates</small></article>
+        <article class="analytics-stat card"><span>Page views in range</span><strong id="rangeViews">—</strong><small id="rangeViewsNote">Selected dates</small></article>
+        <article class="analytics-stat card"><span>Visitors today</span><strong id="visitorsToday">—</strong><small>UTC day</small></article>
+        <article class="analytics-stat card"><span>Visitors this week</span><strong id="visitorsThisWeek">—</strong><small>UTC week</small></article>
+        <article class="analytics-stat card"><span>Visitors this month</span><strong id="visitorsThisMonth">—</strong><small>UTC month</small></article>
+      </section>
+
+      <section class="analytics-panel card" aria-labelledby="chartTitle">
+        <div class="analytics-panel__heading">
+          <div><p class="eyebrow">VISIT TRENDS</p><h2 id="chartTitle">Visitors &amp; page views</h2></div>
+          <div class="analytics-legend"><span><i class="analytics-legend__visitors"></i>Visitors</span><span><i class="analytics-legend__views"></i>Page views</span></div>
+        </div>
+        <div class="analytics-chart" id="visitorChart" role="img" aria-label="Visitor and page view counts over the selected period"></div>
+        <p class="analytics-empty" id="chartEmpty" hidden>No visits were recorded in this date range.</p>
+      </section>
+
+      <div class="analytics-grid">
+        <section class="analytics-panel card" aria-labelledby="sectionsTitle">
+          <p class="eyebrow">PORTFOLIO SECTIONS</p><h2 id="sectionsTitle">Most viewed sections</h2>
+          <ol class="analytics-rankings" id="sectionsList"></ol>
+        </section>
+        <section class="analytics-panel card" aria-labelledby="caseStudiesTitle">
+          <p class="eyebrow">PROJECTS</p><h2 id="caseStudiesTitle">Case study views</h2>
+          <ol class="analytics-rankings" id="caseStudiesList"></ol>
+        </section>
+        <section class="analytics-panel card" aria-labelledby="pagesTitle">
+          <p class="eyebrow">ALL PAGES</p><h2 id="pagesTitle">Page popularity</h2>
+          <ol class="analytics-rankings" id="pagesList"></ol>
+        </section>
+        <section class="analytics-panel card" aria-labelledby="sourcesTitle">
+          <p class="eyebrow">DISCOVERY</p><h2 id="sourcesTitle">Traffic sources</h2>
+          <ol class="analytics-rankings" id="sourcesList"></ol>
+        </section>
+        <section class="analytics-panel card" aria-labelledby="devicesTitle">
+          <p class="eyebrow">DEVICES</p><h2 id="devicesTitle">Device breakdown</h2>
+          <ol class="analytics-rankings" id="devicesList"></ol>
+        </section>
+        <section class="analytics-panel card" aria-labelledby="activityTitle">
+          <p class="eyebrow">AGGREGATED ACTIVITY</p><h2 id="activityTitle">Recent activity</h2>
+          <ol class="analytics-activity" id="activityList"></ol>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="../script.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>

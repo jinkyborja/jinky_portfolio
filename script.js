@@ -6,6 +6,119 @@ const navLinks = document.querySelectorAll('.main-nav a');
 const messageFab = document.getElementById('messageFab');
 const lightbox = document.getElementById('lightbox');
 
+const analyticsConsentKey = 'portfolio-analytics-consent';
+const analyticsVisitorKey = 'portfolio-analytics-visitor';
+const analyticsSections = new Set(['intro', 'about', 'skills', 'projects', 'designs', 'process', 'contact']);
+const isAnalyticsPage = /^\/analytics(?:\/|$)/.test(window.location.pathname);
+
+if (!isAnalyticsPage) {
+  let analyticsStarted = false;
+  const viewedSections = new Set();
+  let sectionObserver;
+
+  function getAnalyticsVisitorId() {
+    const stored = localStorage.getItem(analyticsVisitorKey);
+    if (stored) {
+      try {
+        const visitor = JSON.parse(stored);
+        if (visitor.expiresAt > Date.now() && /^[0-9a-f-]{36}$/i.test(visitor.id)) return visitor.id;
+      } catch (error) {
+        console.warn('Could not read the anonymous analytics identifier.', error);
+      }
+    }
+
+    const id = crypto.randomUUID();
+    localStorage.setItem(analyticsVisitorKey, JSON.stringify({
+      id,
+      expiresAt: Date.now() + 365 * 24 * 60 * 60 * 1000
+    }));
+    return id;
+  }
+
+  function sendAnalyticsEvent(type, section, referrer = '') {
+    const isHomePage = window.location.pathname === '/' || /\/index\.html$/.test(window.location.pathname);
+    const pageSection = isHomePage && analyticsSections.has(section) ? section : null;
+    const payload = {
+      type,
+      visitorId: getAnalyticsVisitorId(),
+      path: isHomePage ? '/' : window.location.pathname,
+      section: pageSection,
+      referrer: type === 'pageview' ? referrer : ''
+    };
+
+    fetch('/api/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true
+    }).then((response) => {
+      if (!response.ok) console.warn(`Analytics event was not recorded (${response.status}).`);
+    }).catch((error) => {
+      console.warn('Analytics event could not be sent.', error);
+    });
+  }
+
+  function startAnalytics() {
+    if (analyticsStarted) return;
+    analyticsStarted = true;
+    sendAnalyticsEvent('pageview', window.location.hash.slice(1), document.referrer);
+
+    window.addEventListener('hashchange', () => {
+      sendAnalyticsEvent('pageview', window.location.hash.slice(1));
+    });
+
+    if ('IntersectionObserver' in window) {
+      sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const section = entry.target.id;
+          if (!entry.isIntersecting || !analyticsSections.has(section) || viewedSections.has(section)) return;
+          viewedSections.add(section);
+          sendAnalyticsEvent('section', section);
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('main section[id]').forEach((section) => sectionObserver.observe(section));
+    }
+  }
+
+  function showAnalyticsConsent() {
+    let banner = document.getElementById('analyticsConsent');
+    if (!banner) {
+      banner = document.createElement('aside');
+      banner.className = 'analytics-consent';
+      banner.id = 'analyticsConsent';
+      banner.setAttribute('aria-label', 'Optional privacy-conscious analytics');
+      banner.innerHTML = '<div class="analytics-consent__copy"><strong>Help improve this portfolio?</strong><p>Optional anonymous analytics count visits and viewed sections. A random identifier stays in this browser for up to 12 months. No names, contact details, precise locations, or fingerprinting are collected.</p><a href="/privacy.html">Privacy details</a></div><div class="analytics-consent__actions"><button type="button" class="analytics-consent__accept">Allow analytics</button><button type="button" class="analytics-consent__decline">Decline</button></div>';
+      document.body.appendChild(banner);
+      banner.querySelector('.analytics-consent__accept').addEventListener('click', () => {
+        localStorage.setItem(analyticsConsentKey, 'accepted');
+        banner.remove();
+        startAnalytics();
+      });
+      banner.querySelector('.analytics-consent__decline').addEventListener('click', () => {
+        localStorage.setItem(analyticsConsentKey, 'declined');
+        localStorage.removeItem(analyticsVisitorKey);
+        banner.remove();
+      });
+    } else {
+      banner.hidden = false;
+    }
+  }
+
+  window.openPortfolioPrivacySettings = () => {
+    localStorage.removeItem(analyticsConsentKey);
+    localStorage.removeItem(analyticsVisitorKey);
+    showAnalyticsConsent();
+  };
+
+  document.querySelectorAll('[data-privacy-settings]').forEach((button) => {
+    button.addEventListener('click', () => window.openPortfolioPrivacySettings());
+  });
+
+  if (localStorage.getItem(analyticsConsentKey) === 'accepted') startAnalytics();
+  else if (!localStorage.getItem(analyticsConsentKey)) showAnalyticsConsent();
+}
+
 const savedTheme = localStorage.getItem('portfolio-theme')
   || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
