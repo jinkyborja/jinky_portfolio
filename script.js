@@ -10,32 +10,87 @@ const analyticsConsentKey = 'portfolio-analytics-consent';
 const analyticsVisitorKey = 'portfolio-analytics-visitor';
 const analyticsSections = new Set(['intro', 'about', 'skills', 'projects', 'designs', 'process', 'contact']);
 const isAnalyticsPage = /^\/analytics(?:\/|$)/.test(window.location.pathname);
+const isPrivacyPage = /^\/privacy(?:\.html|\/)?$/i.test(window.location.pathname);
+let storageWarningShown = false;
+
+function warnStorageFailure(error) {
+  if (storageWarningShown) return;
+  storageWarningShown = true;
+  console.warn('Browser storage is unavailable; saved preferences may not persist.', error);
+}
+
+function readStoredPreference(key) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch (error) {
+    warnStorageFailure(error);
+    return null;
+  }
+}
+
+function writeStoredPreference(key, value) {
+  try {
+    window.localStorage.setItem(key, value);
+    return true;
+  } catch (error) {
+    warnStorageFailure(error);
+    return false;
+  }
+}
+
+function removeStoredPreference(key) {
+  try {
+    window.localStorage.removeItem(key);
+    return true;
+  } catch (error) {
+    warnStorageFailure(error);
+    return false;
+  }
+}
+
+let analyticsConsent = readStoredPreference(analyticsConsentKey);
+if (analyticsConsent !== 'accepted' && analyticsConsent !== 'declined') analyticsConsent = null;
+if (analyticsConsent !== 'accepted') removeStoredPreference(analyticsVisitorKey);
 
 if (!isAnalyticsPage) {
   let analyticsStarted = false;
   const viewedSections = new Set();
   let sectionObserver;
+  let hashChangeHandler;
+  let temporaryVisitor;
 
   function getAnalyticsVisitorId() {
-    const stored = localStorage.getItem(analyticsVisitorKey);
+    const now = Date.now();
+    const stored = readStoredPreference(analyticsVisitorKey);
     if (stored) {
       try {
         const visitor = JSON.parse(stored);
-        if (visitor.expiresAt > Date.now() && /^[0-9a-f-]{36}$/i.test(visitor.id)) return visitor.id;
+        if (visitor.expiresAt > now
+          && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(visitor.id)) {
+          temporaryVisitor = visitor;
+          return visitor.id;
+        }
       } catch (error) {
         console.warn('Could not read the anonymous analytics identifier.', error);
       }
+      removeStoredPreference(analyticsVisitorKey);
     }
 
+    if (temporaryVisitor && temporaryVisitor.expiresAt > now) return temporaryVisitor.id;
     const id = crypto.randomUUID();
-    localStorage.setItem(analyticsVisitorKey, JSON.stringify({
+    const expiresAt = new Date(now);
+    expiresAt.setUTCFullYear(expiresAt.getUTCFullYear() + 1);
+    temporaryVisitor = {
       id,
-      expiresAt: Date.now() + 365 * 24 * 60 * 60 * 1000
-    }));
+      expiresAt: expiresAt.getTime()
+    };
+    writeStoredPreference(analyticsVisitorKey, JSON.stringify(temporaryVisitor));
     return id;
   }
 
   function sendAnalyticsEvent(type, section, referrer = '') {
+    if (analyticsConsent !== 'accepted') return;
+
     const isHomePage = window.location.pathname === '/' || /\/index\.html$/.test(window.location.pathname);
     const pageSection = isHomePage && analyticsSections.has(section) ? section : null;
     const payload = {
@@ -59,13 +114,14 @@ if (!isAnalyticsPage) {
   }
 
   function startAnalytics() {
-    if (analyticsStarted) return;
+    if (analyticsStarted || analyticsConsent !== 'accepted') return;
     analyticsStarted = true;
     sendAnalyticsEvent('pageview', window.location.hash.slice(1), document.referrer);
 
-    window.addEventListener('hashchange', () => {
+    hashChangeHandler = () => {
       sendAnalyticsEvent('pageview', window.location.hash.slice(1));
-    });
+    };
+    window.addEventListener('hashchange', hashChangeHandler);
 
     if ('IntersectionObserver' in window) {
       sectionObserver = new IntersectionObserver((entries) => {
@@ -81,6 +137,20 @@ if (!isAnalyticsPage) {
     }
   }
 
+  function stopAnalytics() {
+    analyticsStarted = false;
+    if (hashChangeHandler) window.removeEventListener('hashchange', hashChangeHandler);
+    if (sectionObserver) sectionObserver.disconnect();
+    hashChangeHandler = null;
+    sectionObserver = null;
+    viewedSections.clear();
+  }
+
+  function closeAnalyticsConsent() {
+    document.getElementById('analyticsConsent')?.remove();
+    document.body.classList.remove('has-analytics-consent');
+  }
+
   function showAnalyticsConsent() {
     let banner = document.getElementById('analyticsConsent');
     if (!banner) {
@@ -88,26 +158,34 @@ if (!isAnalyticsPage) {
       banner.className = 'analytics-consent';
       banner.id = 'analyticsConsent';
       banner.setAttribute('aria-label', 'Optional privacy-conscious analytics');
-      banner.innerHTML = '<div class="analytics-consent__copy"><strong>Help improve this portfolio?</strong><p>Optional anonymous analytics count visits and viewed sections. A random identifier stays in this browser for up to 12 months. No names, contact details, precise locations, or fingerprinting are collected.</p><a href="/privacy.html">Privacy details</a></div><div class="analytics-consent__actions"><button type="button" class="analytics-consent__accept">Allow analytics</button><button type="button" class="analytics-consent__decline">Decline</button></div>';
+      banner.innerHTML = '<div class="analytics-consent__copy"><strong>Help improve this portfolio?</strong><p>Optional anonymous analytics count visits and viewed sections. A random identifier stays in this browser for up to 12 months; stored records are deleted after 13 months. No names, contact details, precise locations, or fingerprinting are collected.</p><a href="/privacy.html">Privacy details</a></div><div class="analytics-consent__actions"><button type="button" class="analytics-consent__accept">Allow analytics</button><button type="button" class="analytics-consent__decline">Decline</button></div>';
       document.body.appendChild(banner);
       banner.querySelector('.analytics-consent__accept').addEventListener('click', () => {
-        localStorage.setItem(analyticsConsentKey, 'accepted');
-        banner.remove();
+        analyticsConsent = 'accepted';
+        writeStoredPreference(analyticsConsentKey, analyticsConsent);
+        closeAnalyticsConsent();
         startAnalytics();
       });
       banner.querySelector('.analytics-consent__decline').addEventListener('click', () => {
-        localStorage.setItem(analyticsConsentKey, 'declined');
-        localStorage.removeItem(analyticsVisitorKey);
-        banner.remove();
+        stopAnalytics();
+        analyticsConsent = 'declined';
+        writeStoredPreference(analyticsConsentKey, analyticsConsent);
+        removeStoredPreference(analyticsVisitorKey);
+        temporaryVisitor = null;
+        closeAnalyticsConsent();
       });
     } else {
       banner.hidden = false;
     }
+    document.body.classList.add('has-analytics-consent');
   }
 
   window.openPortfolioPrivacySettings = () => {
-    localStorage.removeItem(analyticsConsentKey);
-    localStorage.removeItem(analyticsVisitorKey);
+    stopAnalytics();
+    analyticsConsent = null;
+    removeStoredPreference(analyticsConsentKey);
+    removeStoredPreference(analyticsVisitorKey);
+    temporaryVisitor = null;
     showAnalyticsConsent();
   };
 
@@ -115,12 +193,14 @@ if (!isAnalyticsPage) {
     button.addEventListener('click', () => window.openPortfolioPrivacySettings());
   });
 
-  if (localStorage.getItem(analyticsConsentKey) === 'accepted') startAnalytics();
-  else if (!localStorage.getItem(analyticsConsentKey)) showAnalyticsConsent();
+  if (analyticsConsent === 'accepted') startAnalytics();
+  else if (analyticsConsent !== 'declined' && !isPrivacyPage) showAnalyticsConsent();
 }
 
-const savedTheme = localStorage.getItem('portfolio-theme')
-  || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+const storedTheme = readStoredPreference('portfolio-theme');
+const savedTheme = storedTheme === 'dark' || storedTheme === 'light'
+  ? storedTheme
+  : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 if (themeToggle) {
   const iconEl = themeToggle.querySelector('.theme-toggle__icon');
@@ -131,7 +211,7 @@ if (themeToggle) {
     const isDark = theme === 'dark';
     iconEl.textContent = isDark ? '☀' : '☾';
     textEl.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-    localStorage.setItem('portfolio-theme', theme);
+    writeStoredPreference('portfolio-theme', theme);
   }
 
   applyTheme(savedTheme);
