@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="privacy-page">
   <header class="topbar">
     <div class="topbar__inner">
       <a class="topbar__brand" href="index.html"><span class="topbar__dot" aria-hidden="true"></span>Jinky Suson</a>
@@ -19,14 +19,18 @@
       </button>
     </div>
   </header>
-  <main class="page case-study">
+  <main class="page case-study privacy-page__main">
     <section class="card">
+      <a class="btn btn--ghost privacy-page__home-link" href="/">
+        <span aria-hidden="true">←</span>
+        Back to Home
+      </a>
       <p class="eyebrow">YOUR PRIVACY</p>
       <h1 class="profile__name">Optional portfolio analytics</h1>
       <p class="about__text">Analytics run only if you choose “Allow analytics.” They count page views and section visits, estimate a broad device category, and record the referring website’s domain. They do not collect names, email addresses, precise locations, or browser fingerprints.</p>
       <p class="about__text">If you opt in, a random first-party identifier is stored in this browser for up to 12 months so repeat visits are not counted as new unique visitors. The identifier is hashed before it is stored with event records. Analytics records are automatically deleted after 13 months. The portfolio owner can view aggregate analytics; they are not shown to other visitors.</p>
       <p class="about__text">You can decline or withdraw consent at any time using the privacy settings. Withdrawing stops future tracking and removes this browser’s identifier. Previously collected records remain until the automatic retention period expires.</p>
-      <button class="btn btn--ghost" data-privacy-settings type="button">Change privacy settings</button>
+      <button class="btn btn--ghost privacy-page__settings" data-privacy-settings type="button">Change privacy settings</button>
       <p class="about__text">Questions? Contact <a href="mailto:jinkysuson09@gmail.com">Jinky Suson</a>.</p>
     </section>
   </main>

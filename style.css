@@ -111,6 +111,22 @@ h1, h2, h3 { margin: 0; font-family: 'Space Grotesk', 'Inter', sans-serif; }
   padding: clamp(20px, 5vw, 40px) clamp(16px, 5vw, 24px) 96px;
 }
 .case-study.page { max-width: 920px; }
+.privacy-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: var(--bg);
+}
+.privacy-page__main {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+}
+.privacy-page__home-link {
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+.privacy-page__settings { margin-top: 26px; }
 
 .hero { display: grid; min-height: 430px; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: clamp(32px, 5vw, 64px); overflow: hidden; }
 .hero__copy { min-width: 0; padding-block: 12px; }
